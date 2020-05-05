@@ -1,11 +1,18 @@
 import React from 'react'
+
+import { connect } from 'react-redux'
+
 import './score.style.scss'
 
-const Score = () => (
+const Score = ({currentScore}) => (
 <div className='score'>
-    <h1>0</h1>
-    <h2>Score</h2>
+    <h1>{currentScore}</h1>
+    <h2>Your score</h2>
 </div>
 )
 
-export default Score 
+const mapStateToProps = state => ({
+    currentScore: state.score.currentScore
+})
+
+export default connect(mapStateToProps)(Score) 

@@ -1,10 +1,12 @@
 import React from 'react'
 
+import Score from '../components/score/score.component'
+
 function ScorePage() {
     return (
     <div>
-        <h1>
-        Score</h1>
+        <Score></Score>
+        <p>Alltime high</p>
     </div>
     )
 }
