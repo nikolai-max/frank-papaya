@@ -1,21 +1,18 @@
 import React from 'react';
 import './App.css';
+import { Route } from 'react-router-dom'
 
-import Dashboard from './components/dashboard/dashboard.component'
-import Score from './components/score/score.component'
-import Keys from './components/keys/keys.component'
+import scorePage from './pages/scorepage'
+import landingPage from './pages/landingpage'
+
 
 function App() {
   return (
     <div className="App">
-      <div className='header'>
-        <h1>Frank Papaya</h1>
-      </div>
-      <Dashboard></Dashboard>
-      <Score></Score>
-      <Keys></Keys>
+        <Route path='/' exact component={landingPage} />
+        <Route path='/score' exact component={scorePage}/>
     </div>
-  );
+        );
 }
 
 export default App;

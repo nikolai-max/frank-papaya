@@ -12,16 +12,6 @@ const Key = props => {
         audio.currentTime = 0;
         key.classList.add('playing')
       });
-    
-      
-      function removeTransition(e) {
-        if (e.propertyName !== 'transform') return;
-        this.classList.remove('playing')
-      }
-      
-      const keys = document.querySelectorAll('.key')
-      keys.forEach(key => 
-        key.addEventListener('transitionend', removeTransition));    
 
     return (
         <div data-key={props.id} className="key">
