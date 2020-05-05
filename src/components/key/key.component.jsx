@@ -1,23 +1,31 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import './key.style.scss'
 
 const Key = props => {
-    window.addEventListener("keydown", e => {
-        let audio = document.getElementById(e.key);
-        if (!audio) return;
-        const key = document.querySelector(`div[data-key="${e.key}"]`)
-        
-        console.log(audio);
-        audio.play();
-        audio.currentTime = 0;
-        key.classList.add('playing')
-      });
+    const audioRef = useRef();
+    const keyRef = useRef();
+
+    function onKeyDown(e){
+        if (e.key !== props.char) {
+            return;
+        }
+        audioRef.current.play();
+        keyRef.current.classList.add('playing')
+    }
+
+    function onTransitionEnd(e){
+        keyRef.current.classList.remove('playing')
+    }
+
+    useEffect(() => {
+        document.addEventListener("keydown", onKeyDown, false);
+    }, []);
 
     return (
-        <div data-key={props.id} className="key">
-            <kbd>{props.id.toUpperCase()}</kbd>
+        <div className="key" ref={keyRef} onTransitionEnd={onTransitionEnd}>
+            <kbd>{props.char.toUpperCase()}</kbd>
             <span className="sound">{props.name}</span>
-            <audio id={props.id} ref={props.ref} src={props.src}></audio>
+            <audio ref={audioRef} src={props.src}></audio>
         </div>
     );
   };
