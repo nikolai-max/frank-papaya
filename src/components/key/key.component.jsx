@@ -9,7 +9,6 @@ const Key = (props) => {
     const audioRef = useRef();
     const keyRef = useRef();
     const pressed = [];
-    let score = 0;
     const scoreCombinations = {
         combinations: [{ comb: 'aas', points: 20, prompt: 'Sweet ass combo'}, { comb: 'sa', points: 50, prompt: 'Genious strike'}, { comb: 'd', points: 150, prompt: 'Keyboard banana!'}, { comb: 'f', points: 200, prompt: 'That´s the Frank tone'}, { comb: 'g', points: 225, prompt: 'Sing "Frank-Papaya"'}, { comb: 'h', points: 330, prompt: 'This is it'}, { comb: 'j', points: 450, prompt: 'Pinapple!!'}, { comb: 'k', points: 750, prompt: 'Baywatch-banana'}, { comb: 'l', points: 1000, prompt: 'Beach combo, wild!'}],
         }
@@ -31,9 +30,7 @@ const Key = (props) => {
         scoreCombinations.combinations.map((combination) => {
             if (pressed.join('').includes(combination.comb)) {
                 console.log(combination.prompt);
-                score += combination.points
-                console.log(score)
-                props.setCurrentScore(score)
+                props.setCurrentScore(combination.points)
             }
         })
     }

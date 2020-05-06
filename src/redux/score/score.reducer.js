@@ -1,3 +1,5 @@
+import { addPointsToScore } from './score.utils'
+
 const INITIAL_STATE = {
     currentScore: 0
 }
@@ -7,7 +9,7 @@ const scoreReducer = (state = INITIAL_STATE, action) => {
         case 'SET_CURRENT_SCORE':
             return {
                 ...state,
-                currentScore: action.payload
+                currentScore: addPointsToScore(state.currentScore, action.payload)
             }
 
         default: 
