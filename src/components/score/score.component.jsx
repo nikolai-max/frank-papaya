@@ -8,7 +8,10 @@ import './score.style.scss'
 const Score = ({currentScore}) => (
 
 <div className='score'>
-    <h1><CountUp end={currentScore} /></h1>
+    <h1><CountUp 
+    preserveValue={true}
+    end={currentScore}
+     /></h1>
     
     <h2>Your score</h2>
 </div>
