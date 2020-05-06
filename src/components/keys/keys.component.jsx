@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './keys.style.scss'
+
 import Bear from '../../media/sounds/bear.wav'
 import Boom from '../../media/sounds/boom.wav'
 import Comet from '../../media/sounds/comet.wav'
@@ -11,6 +11,7 @@ import Ride from '../../media/sounds/ride.wav'
 import Sight from '../../media/sounds/sight.wav'
 
 import Key from '../key/key.component'
+import './keys.style.scss'
 
 
 class Keys extends Component {
@@ -23,7 +24,7 @@ class Keys extends Component {
         return(
             <div className="keys">
                 {
-                    items.map((item, index) => {
+                    items.map((item) => {
                         return <Key
                             key={item.key}
                             char={item.key}
