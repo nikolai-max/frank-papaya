@@ -3,12 +3,14 @@ import React, {useEffect, useRef} from 'react'
 import { connect } from 'react-redux'
 
 import { setCurrentScore } from '../../redux/score/score.actions'
+import { pressedKeys } from '../../redux/combinations/combinations.actions'
+
 import './key.style.scss'
 
-const Key = (props) => {
+const Key = (props, {combinations}) => {
     const audioRef = useRef();
     const keyRef = useRef();
-    const pressed = [];
+    
     const scoreCombinations = {
         combinations: [{ comb: 'aas', points: 20, prompt: 'Sweet ass combo'}, { comb: 'sa', points: 50, prompt: 'Genious strike'}, { comb: 'd', points: 150, prompt: 'Keyboard banana!'}, { comb: 'f', points: 200, prompt: 'That´s the Frank tone'}, { comb: 'g', points: 225, prompt: 'Sing "Frank-Papaya"'}, { comb: 'h', points: 330, prompt: 'This is it'}, { comb: 'j', points: 450, prompt: 'Pinapple!!'}, { comb: 'k', points: 750, prompt: 'Baywatch-banana'}, { comb: 'l', points: 1000, prompt: 'Beach combo, wild!'}],
         }
@@ -24,11 +26,11 @@ const Key = (props) => {
     }
 
     function scoringPoints(e) {
-        pressed.push(e.key);
-        console.log(pressed)
+        props.pressedKeys(e.key);
+        console.log(`This is what Im after: ${combinations}`)
 
         scoreCombinations.combinations.map((combination) => {
-            if (pressed.join('').includes(combination.comb)) {
+            if (props.pressedKeys === combination.comb) {
                 console.log(combination.prompt);
                 props.setCurrentScore(combination.points)
             }
@@ -53,11 +55,15 @@ const Key = (props) => {
   };
 
 const mapDispatchToProps = dispatch => ({
-    setCurrentScore: (score) => dispatch(setCurrentScore(score))
+    setCurrentScore: (score) => dispatch(setCurrentScore(score)),
+    pressedKeys: (keys) => dispatch(pressedKeys(keys))
+})
+
+const mapStateToProps = state => ({
+    combinations: state.keys.pressedKeys
 })
   
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(Key);
-  
