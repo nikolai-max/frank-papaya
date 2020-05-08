@@ -7,12 +7,12 @@ import { pressedKeys } from '../../redux/combinations/combinations.actions'
 
 import './key.style.scss'
 
-const Key = (props, {combinations}) => {
+const Key = (props) => {
     const audioRef = useRef();
     const keyRef = useRef();
     
     const scoreCombinations = {
-        combinations: [{ comb: 'aas', points: 20, prompt: 'Sweet ass combo'}, { comb: 'sa', points: 50, prompt: 'Genious strike'}, { comb: 'd', points: 150, prompt: 'Keyboard banana!'}, { comb: 'f', points: 200, prompt: 'That´s the Frank tone'}, { comb: 'g', points: 225, prompt: 'Sing "Frank-Papaya"'}, { comb: 'h', points: 330, prompt: 'This is it'}, { comb: 'j', points: 450, prompt: 'Pinapple!!'}, { comb: 'k', points: 750, prompt: 'Baywatch-banana'}, { comb: 'l', points: 1000, prompt: 'Beach combo, wild!'}],
+        combinations: [{ comb: ['s','a','a'], points: 20, prompt: 'Sweet ass combo'}, { comb: ['s','s','s'], points: 50, prompt: 'Genious strike'}, { comb: ['d','a','a'], points: 150, prompt: 'Keyboard banana!'}, { comb: ['s','f','f'], points: 200, prompt: 'That´s the Frank tone'}, { comb: ['f','s','a'], points: 225, prompt: 'Sing "Frank-Papaya"'}, { comb: ['h','f','a'], points: 330, prompt: 'This is it'}, { comb: ['j','j','h'], points: 450, prompt: 'Pinapple!!'}, { comb: ['l','k','s'], points: 750, prompt: 'Baywatch-banana'}, { comb: ['s','l','k'], points: 1000, prompt: 'Beach combo, wild!'}],
         }
 
     function onKeyDown(e){
@@ -27,10 +27,9 @@ const Key = (props, {combinations}) => {
 
     function scoringPoints(e) {
         props.pressedKeys(e.key);
-        console.log(`This is what Im after: ${combinations}`)
 
-        scoreCombinations.combinations.map((combination) => {
-            if (props.pressedKeys === combination.comb) {
+        scoreCombinations.combinations.map(combination => {
+            if (props.combinations.join(',') === combination.comb.join(',')) {
                 console.log(combination.prompt);
                 props.setCurrentScore(combination.points)
             }
