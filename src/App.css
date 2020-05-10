@@ -18,10 +18,18 @@ h1 {
   font-size: 100px;
 }
 
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+h2 {
+  font-size: 100px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 

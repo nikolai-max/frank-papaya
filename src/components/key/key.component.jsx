@@ -32,6 +32,7 @@ const Key = (props) => {
             if (props.combinations.join(',') === combination.comb.join(',')) {
                 console.log(combination.prompt);
                 props.setCurrentScore(combination.points)
+                props.pressedKeys([])
             }
         })
     }
