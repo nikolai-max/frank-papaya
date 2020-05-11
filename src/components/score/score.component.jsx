@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 
 import './score.style.scss'
 
+
 const Score = ({currentScore}) => (
 
 <div className='score'>
@@ -12,7 +13,6 @@ const Score = ({currentScore}) => (
     preserveValue={true}
     end={currentScore}
      /></h2>
-    
     <h3>Score</h3>
 </div>
 )
