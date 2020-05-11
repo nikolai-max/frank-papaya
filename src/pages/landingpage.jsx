@@ -8,8 +8,8 @@ import './pages.style.scss'
 function LandingPage() {
     return (
     <div className="landingpageContainer">
-        <div className='header'>
-            <h1>Frank-Papaya</h1>
+        <div >
+            <h1 className='header'>Frank-Papaya</h1>
         </div>
         <Dashboard></Dashboard>
         <Score></Score>
