@@ -10,8 +10,12 @@ module.exports = override(
         javascriptEnabled: true,
         modifyVars: { 
             '@primary-color': '#EF8333',
-            '@text-color': '#222627',
-            '@border-radius-base': '1rem'
+            '@secondary-color': '#621E50',
+            '@border-radius-base': '1rem',
+            '@font-family': '"Knewave", cursive;',
+            '@text-color': 'fade(@black, 65%);',
+            '@heading-color': 'white;',
+            '@link-color': 'white;'
            },
         },
     }),
