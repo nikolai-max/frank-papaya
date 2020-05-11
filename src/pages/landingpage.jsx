@@ -4,6 +4,7 @@ import Dashboard from '../components/dashboard/dashboard.component'
 import Score from '../components/score/score.component'
 import Keys from '../components/keys/keys.component'
 import './pages.style.scss'
+import AntModal from '../components/modal/modal.component'
 
 function LandingPage() {
     return (
@@ -14,6 +15,7 @@ function LandingPage() {
         <Dashboard></Dashboard>
         <Score></Score>
         <Keys></Keys>
+        <AntModal></AntModal>
     </div>
     )
 }
