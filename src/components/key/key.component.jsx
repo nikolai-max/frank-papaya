@@ -3,7 +3,8 @@ import React, {useEffect, useRef} from 'react'
 import { connect } from 'react-redux'
 
 import { setCurrentScore } from '../../redux/score/score.actions'
-import { pressedKeys } from '../../redux/combinations/combinations.actions'
+import { pressedKeys, prompt } from '../../redux/combinations/combinations.actions'
+
 
 import './key.style.scss'
 
@@ -25,12 +26,14 @@ const Key = (props) => {
         scoringPoints(e)
     }
 
+
     function scoringPoints(e) {
         props.pressedKeys(e.key);
 
         scoreCombinations.combinations.map(combination => {
             if (props.combinations.join(',') === combination.comb.join(',')) {
-                console.log(combination.prompt);
+                console.log(combination.prompt)
+                props.prompt(combination.prompt)
                 props.setCurrentScore(combination.points)
                 props.pressedKeys([])
             }
@@ -50,17 +53,20 @@ const Key = (props) => {
             <kbd>{props.char.toUpperCase()}</kbd>
             <span className="sound">{props.sound}</span>
             <audio ref={audioRef} src={props.src}></audio>
+            <p className={"score-prompt"}></p>
         </div>
     );
   };
 
 const mapDispatchToProps = dispatch => ({
     setCurrentScore: (score) => dispatch(setCurrentScore(score)),
-    pressedKeys: (keys) => dispatch(pressedKeys(keys))
+    pressedKeys: (keys) => dispatch(pressedKeys(keys)),
+    prompt: (sentence) => dispatch(prompt(sentence))
 })
 
 const mapStateToProps = state => ({
-    combinations: state.keys.pressedKeys
+    combinations: state.keys.pressedKeys,
+    // prompt: state.keys.prompt
 })
   
 export default connect(

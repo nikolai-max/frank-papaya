@@ -6,9 +6,10 @@ import CountUp from 'react-countup';
 import './score.style.scss'
 
 
-const Score = ({currentScore}) => (
+const Score = ({currentScore, currentTime}) => (
 
 <div className='score'>
+    <h3>{currentTime} seconds</h3>
     <h2><CountUp 
     preserveValue={true}
     end={currentScore}
@@ -18,7 +19,8 @@ const Score = ({currentScore}) => (
 )
 
 const mapStateToProps = state => ({
-    currentScore: state.score.currentScore
+    currentScore: state.score.currentScore,
+    currentTime: state.time.currentTime
 })
 
 export default connect(mapStateToProps)(Score) 

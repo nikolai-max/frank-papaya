@@ -1,7 +1,8 @@
 import { addPressedKey } from './combinations.utils'
 
 const INITIAL_STATE = {
-    pressedKeys: []
+    pressedKeys: [],
+    propmt: ''
 }
 
 const combinationsReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ const combinationsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 combinations: addPressedKey(state.pressedKeys, action.payload)
+            }
+        case 'PROMPT':
+            return {
+                ...state,
+                propmt: action.payload
             }
 
         default: 

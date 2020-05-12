@@ -22,3 +22,11 @@
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
     }
+
+    .score-prompt {
+        transition: all 1s ease;
+        position: absolute;
+        &:hover {
+            transform: scale(20) rotate(108deg) skew(46deg, 35deg);
+        }
+    }
