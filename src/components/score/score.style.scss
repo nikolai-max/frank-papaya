@@ -1,7 +1,24 @@
+$rotate: random(300);
+$scale: random(30);
+
 .score {
     margin: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@keyframes scaleNRotate {
+    0% {
+    }
+    100% {
+      transform: scale($scale) rotate($rotate + deg);
+    }
+  }
+
+.score-prompt {
+    animation: 3s ease-out 0s 1 scaleNRotate;
+    color: #E94363;
+    position: absolute;
 }

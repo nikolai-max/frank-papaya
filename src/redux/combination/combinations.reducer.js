@@ -2,7 +2,7 @@ import { addPressedKey } from './combinations.utils'
 
 const INITIAL_STATE = {
     pressedKeys: [],
-    propmt: ''
+    propmt: 'hello'
 }
 
 const combinationsReducer = (state = INITIAL_STATE, action) => {
