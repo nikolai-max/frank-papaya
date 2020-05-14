@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import { Modal } from 'antd';
 
+import { connect } from 'react-redux'
+
 import { init }  from '../../functions/init.function'
 
 
@@ -19,7 +21,7 @@ class AntModal extends Component {
     this.setState({
       visible: false,
     });
-    console.log(init)
+    this.props.onHandleOk()
   };
 
   handleCancel = e => {
@@ -50,4 +52,8 @@ class AntModal extends Component {
   }
 }
 
-export default AntModal
+const mapDispatchToProps = dispatch =>({
+  onHandleOk: ()=>init(dispatch)
+})
+
+export default connect(null, mapDispatchToProps)(AntModal)

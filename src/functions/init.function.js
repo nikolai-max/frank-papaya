@@ -5,6 +5,7 @@ import { setCurrentScore } from '../redux/score/score.actions'
 export let init = (dispatch) => {
     // Reset the state of score and keyPressed
     dispatch(setCurrentScore(0))
+    console.log('init')
     // Initiate the timer state
     // Start recording
     // Start playing the frank papaya tune
