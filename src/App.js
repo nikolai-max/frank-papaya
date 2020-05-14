@@ -11,7 +11,7 @@ function App() {
         <Route path='/' exact component={landingPage} />
         <Route path='/score' exact component={scorePage}/>
     </div>
-        );
+  );
 }
 
 export default (App);

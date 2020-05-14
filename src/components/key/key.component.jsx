@@ -6,7 +6,6 @@ import { setCurrentScore } from '../../redux/score/score.actions'
 import { pressedKeys } from '../../redux/combination/combinations.actions'
 import { setMessage } from '../../redux/message/message.actions'
 
-
 import './key.style.scss'
 
 const Key = (props) => {
@@ -26,7 +25,6 @@ const Key = (props) => {
         audioRef.current.currentTime = 0;
         scoringPoints(e)
     }
-
 
     function scoringPoints(e) {
         props.pressedKeys(e.key);
