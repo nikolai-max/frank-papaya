@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import { Modal } from 'antd';
 
-import init from '../../functions/init.function'
+import { init }  from '../../functions/init.function'
+
 
 class AntModal extends Component {
   state = { visible: true };
@@ -18,7 +19,7 @@ class AntModal extends Component {
     this.setState({
       visible: false,
     });
-    init();
+    console.log(init)
   };
 
   handleCancel = e => {

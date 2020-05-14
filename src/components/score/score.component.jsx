@@ -6,7 +6,6 @@ import CountUp from 'react-countup';
 import { setMessage } from '../../redux/message/message.actions'
 import './score.style.scss'
 
-
 const Score = ({currentScore, currentTime, currentMessage, setMessage}) => {
     const messageRef = useRef();
     
