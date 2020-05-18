@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { Modal } from 'antd';
-
 import { connect } from 'react-redux'
 
 import { init }  from '../../functions/init.function'
@@ -45,7 +44,7 @@ class AntModal extends Component {
         >
           <p>Of course, Frank is stuck in Asia because of COVID-19. He can´t take a plane back, and have to stay in the waterfall with the german girls. He has one wish from you, make an nice song that he can play to the germans to get some good vibes.</p>
 
-          <p>You have 30 sec, and Frank will dance along and give you points if he feel the wibes.</p>
+          <p>You have 50 sec, and Frank will dance along and give you points if he feel the wibes.</p>
         </Modal>
       </div>
     );
