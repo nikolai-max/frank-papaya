@@ -4,6 +4,7 @@ import { Modal, Button } from 'antd';
 import { connect } from 'react-redux'
 
 import { init }  from '../../functions/init.function'
+import Frank from './frank-papaya.png'
 
 
 class AntModal extends Component {
@@ -41,13 +42,14 @@ class AntModal extends Component {
           centered={true}
           okText={'Play Frank-Papaya'}
           footer={[
-            <div style={{textAlign: 'center'}}>
+            <div style={{textAlign: 'center', marginBottom: '10px'}}>
               <Button key="back" type="primary" onClick={this.handleOk}>
                 Play Frank-Papaya
               </Button>
             </div>
           ]}
         >
+          <img src={Frank} alt="Frank-papaya avatar" width="150px" style={{float: 'right'}}></img>
           <p>Of course, Frank is stuck in Asia because of COVID-19. He can´t take a plane back, and have to stay in the waterfall with the german girls. He has one wish from you, make an nice song that he can play to the germans to get some good vibes.</p>
 
           <p>You have 50 sec, and Frank will dance along and give you points if he feel the wibes.</p>

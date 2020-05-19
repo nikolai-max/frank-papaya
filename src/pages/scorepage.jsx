@@ -6,7 +6,7 @@ function ScorePage() {
     return (
     <div>
         <Points></Points>
-        <p>Alltime high</p>
+        <p>Comming soon</p>
     </div>
     )
 }

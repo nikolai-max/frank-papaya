@@ -4,6 +4,7 @@ import { Modal, Button } from 'antd';
 import { connect } from 'react-redux'
 
 import { init }  from '../../functions/init.function'
+import Frank from './frank-papaya.png'
 
 class AntModal2 extends React.Component {
   state = {
@@ -14,10 +15,6 @@ class AntModal2 extends React.Component {
     this.setState({
       visible: true,
     });
-  };
-
-  handleOk = () => {
-    this.setState({ visible: false });
   };
 
   handleRestart = () => {
@@ -32,6 +29,8 @@ class AntModal2 extends React.Component {
       message = 'Frank enjoyed your vibes! What a show. The Germans are all over Frank now.'
     } else if (this.props.currentScore > 1000) {
       message = 'Frank is blown away! God damn you got groowe. The Germans are all over Frank now.'
+    } else if (this.props.currentScore > 4000) {
+      message = 'WHOHOWOAHAAA, your breaking the scores! Frank is holding on to his German babes and are afraid that you will take them with your grooves'
     } else {
       message = 'You gotta groowe better than that! Frank is trying to follow along, but just cant feel the wibe'
     }
@@ -43,17 +42,15 @@ class AntModal2 extends React.Component {
           closable={false}
           centered={true}
           footer={[
-            <div style={{textAlign: 'center'}}>
+            <div style={{textAlign: 'center', marginBottom: '10px'}}>
               <Button key="back" type="primary" onClick={this.handleRestart}>
                 Play again
-              </Button>
-              <Button key="submit" type="primary" onClick={this.handleOk}>
-                Submit score
               </Button>
             </div>
           ]}
         >
-            <div style={{fontSize: '65px', textAlign: 'center', marginBottom: '25px', color: '#621E50'}}>{this.props.currentScore} points!</div>
+            <img src={Frank} alt="Frank-papaya avatar" width="80px" style={{float: 'left'}}></img>
+            <div style={{fontSize: '45px', textAlign: 'center', marginBottom: '25px', color: '#621E50'}}>{this.props.currentScore} points!</div>
             <p>{message}</p>
         </Modal>
       </div>
