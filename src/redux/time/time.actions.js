@@ -2,13 +2,17 @@ import { decreaseTimer } from './timerService'
 
 export const setCurrentTime = () => {
     return (dispatch, getState)=> {
-        let intervalId
+        let interval
         // getState().time.currentTime is num
-        intervalId = setInterval(()=>{
-                decreaseTimer(dispatch)
+        interval = setInterval(()=>{
+            decreaseTimer(dispatch)
                 if(getState().time.currentTime <= 0) {
-                    clearInterval(intervalId)
+                    clearInterval(interval)
                 }
             }, 1000) 
     }
 }
+
+export const restartTime = () => ({
+    type: 'RESTART_TIME'
+})

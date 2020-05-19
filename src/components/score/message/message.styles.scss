@@ -3,13 +3,20 @@ $scale: random(30);
 
 @keyframes scaleNRotate {
     0% {
+      backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
     }
     100% {
-      transform: scale($scale) rotate($rotate + deg);
+      transform: translateZ(0) scale($scale) rotate($rotate + deg);
+      backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
     }
   }
 
 .score-prompt {
     animation: 3s ease-out 0s 1 scaleNRotate;
     color: #E94363;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }

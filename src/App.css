@@ -6,6 +6,7 @@ body,html {
   background: url('/background.jpg');
   background-size: cover;
   background-position: center;
+  text-align: center;
 }
 
 h1 {

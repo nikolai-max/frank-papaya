@@ -6,7 +6,7 @@ const Timers = ({currentTime}) => {
     
 return (
     <div>
-        <h3>{currentTime} seconds</h3>
+        <h3 style={{margin: '65px 0 0 0'}}>{currentTime} seconds</h3>
     </div>
     )
 }

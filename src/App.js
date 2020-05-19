@@ -7,7 +7,7 @@ import landingPage from './pages/landingpage'
 
 function App() {
   return (
-    <div className="App">
+    <div>
         <Route path='/' exact component={landingPage} />
         <Route path='/score' exact component={scorePage}/>
     </div>

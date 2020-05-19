@@ -34,6 +34,8 @@ class AntModal2 extends React.Component {
         <Modal
           visible={visible}
           title="Great work!!"
+          closable={false}
+          centered={true}
           footer={[
             <Button key="back" type="primary" onClick={this.handleRestart}>
               Play again
@@ -41,9 +43,6 @@ class AntModal2 extends React.Component {
             <Button key="submit" type="primary" onClick={this.handleOk}>
               Submit score
             </Button>,
-            <Button key="download" type="primary" onClick={this.handleOk}>
-            Download track
-          </Button>,
           ]}
         >
             <Score></Score>

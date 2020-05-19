@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setCurrentScore } from '../redux/score/score.actions'
 import { pressedKeys } from '../redux/combination/combinations.actions'
 import { setCurrentTime } from '../redux/time/time.actions'
+import { restartTime } from '../redux/time/time.actions'
 
 import Pappaya from '../media/sounds/frank-papaya.wav'
 
@@ -18,9 +19,10 @@ export let init = (dispatch) => {
         audio.currentTime = 0
     }
     audio.play()
-    // Initiate the timer state
-    // OBS, this will not only initiate, it will add to the excisting countdown.
-    dispatch(setCurrentTime(30))
+    //Reset the timer
+    dispatch(restartTime())
+    // Initiate the timer
+    dispatch(setCurrentTime())
     
     // Start recording
 }

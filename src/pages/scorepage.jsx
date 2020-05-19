@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Score from '../components/score/score.component'
+import Points from '../components/score/points/points.component'
 
 function ScorePage() {
     return (
     <div>
-        <Score></Score>
+        <Points></Points>
         <p>Alltime high</p>
     </div>
     )
