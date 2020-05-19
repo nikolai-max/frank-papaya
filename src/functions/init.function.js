@@ -18,7 +18,7 @@ export let init = (dispatch) => {
         audio.pause()
         audio.currentTime = 0
     }
-    // audio.play()
+    audio.play()
 
     //Reset the timer
     dispatch(restartTime())

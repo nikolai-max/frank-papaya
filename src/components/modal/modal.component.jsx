@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Modal } from 'antd';
+import { Modal, Button } from 'antd';
 import { connect } from 'react-redux'
 
 import { init }  from '../../functions/init.function'
@@ -34,13 +34,19 @@ class AntModal extends Component {
     return (
       <div>
         <Modal
-
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           closable={false}
           centered={true}
           okText={'Play Frank-Papaya'}
+          footer={[
+            <div style={{textAlign: 'center'}}>
+              <Button key="back" type="primary" onClick={this.handleOk}>
+                Play Frank-Papaya
+              </Button>
+            </div>
+          ]}
         >
           <p>Of course, Frank is stuck in Asia because of COVID-19. He can´t take a plane back, and have to stay in the waterfall with the german girls. He has one wish from you, make an nice song that he can play to the germans to get some good vibes.</p>
 
