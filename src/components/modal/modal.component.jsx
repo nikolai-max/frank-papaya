@@ -34,7 +34,7 @@ class AntModal extends Component {
     return (
       <div>
         <Modal
-          title="Oh no, Frank-Papaya is stuck"
+
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}

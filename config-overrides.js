@@ -14,8 +14,9 @@ module.exports = override(
             '@border-radius-base': '1rem',
             '@font-family': '"Knewave", cursive;',
             '@text-color': 'fade(@black, 65%);',
-            '@heading-color': '@secondary-color;',
+            '@heading-color': 'white',
             '@link-color': 'white;',
+            '@font-size-base': '16px;'
            },
         },
     }),

@@ -6,18 +6,21 @@ const initial_state = {
 }
 
 const timeReducer = (state = initial_state, action) => {
+    console.log('a string', action)
     switch(action.type) {
         case "RESTART_TIME":
-            return initial_state
+            return {...state, currentTime: 5}
+        case "SET_INTERVAL_ID":
+            return {...state, intervalID: action.intervalID}
         case CURRENT_TIME:
             const newTime = state.currentTime - 1;
             return {
                 ...state,
                 currentTime: newTime
             }
-        default: 
+            default: 
             return state
+        }
     }
-}
 
 export default timeReducer
