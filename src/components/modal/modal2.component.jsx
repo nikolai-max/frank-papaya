@@ -28,11 +28,11 @@ class AntModal2 extends React.Component {
     if(this.props.currentScore > 100) {
       message = 'Frank enjoyed your vibes! What a show. The Germans are all over Frank now.'
     } else if (this.props.currentScore > 1000) {
-      message = 'Frank is blown away! God damn you got groowe. The Germans are all over Frank now.'
+      message = 'Frank is blown away! God damn, you got the groove. The Germans are all over Frank now.'
     } else if (this.props.currentScore > 4000) {
       message = 'WHOHOWOAHAAA, your breaking the scores! Frank is holding on to his German babes and are afraid that you will take them with your grooves'
     } else {
-      message = 'You gotta groowe better than that! Frank is trying to follow along, but just cant feel the wibe'
+      message = "You gotta groove better than that! Frank is trying to follow along but just can't feel the vibe."
     }
 
     return (
