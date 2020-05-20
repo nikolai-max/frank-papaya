@@ -17,17 +17,29 @@ const Key = (props) => {
         }
 
     function onKeyDown(e){
+    
         if (e.key !== props.char) {
             return;
         }
         audioRef.current.play();
         keyRef.current.classList.add('playing')
         audioRef.current.currentTime = 0;
-        scoringPoints(e)
+        scoringPoints(e.key)
+    }
+
+    function keytap(e){
+        if (e.target.innerText !== props.char.toUpperCase()) {
+            return;
+        }
+        audioRef.current.play();
+        keyRef.current.classList.add('playing')
+        audioRef.current.currentTime = 0;
+        scoringPoints(e.target.innerText.toLowerCase())
     }
 
     function scoringPoints(e) {
-        props.pressedKeys(e.key);
+
+        props.pressedKeys(e);
 
         scoreCombinations.combinations.map(combination => {
             if (props.combinations.join(',') === combination.comb.join(',')) {
@@ -44,11 +56,10 @@ const Key = (props) => {
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyDown, false);
-        document.addEventListener("click", onKeyDown, false);
     });
 
     return (
-        <div className="key" ref={keyRef} onTransitionEnd={onTransitionEnd}>
+        <div className="key" ref={keyRef} onClick={keytap} onTransitionEnd={onTransitionEnd}>
             <kbd>{props.char.toUpperCase()}</kbd>
             <span className="sound">{props.sound}</span>
             <audio ref={audioRef} src={props.src}></audio>
