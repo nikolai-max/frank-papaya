@@ -52,7 +52,7 @@ class AntModal extends Component {
           <img src={Frank} alt="Frank-papaya avatar" width="150px" style={{float: 'right'}}></img>
           <p>Of course, Frank is stuck in Asia because of COVID-19. He can´t take a plane back and have to stay in the waterfall with the german girls. He has one wish from you, make a nice song that he can play to the germans to get some good vibes.</p>
 
-          <p>You have 50 sec, and Frank will dance along and give you points if he feels the vibes.</p>
+          <p>You have 50 sec, and Frank will dance along and give you points if he feels the vibes. </p>
         </Modal>
       </div>
     );
