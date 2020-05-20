@@ -44,6 +44,7 @@ const Key = (props) => {
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyDown, false);
+        document.addEventListener("click", onKeyDown, false);
     });
 
     return (
