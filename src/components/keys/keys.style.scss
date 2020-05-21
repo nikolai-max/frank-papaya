@@ -1,5 +1,11 @@
 .keys {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+  display: grid;
+  grid-gap: 23px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: 1fr;
+  justify-content: center;
+}
+
+/* display: flex;
+flex-wrap: wrap;
+justify-content: space-around; */

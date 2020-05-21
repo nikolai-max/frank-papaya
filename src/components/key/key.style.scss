@@ -1,5 +1,4 @@
 .key {
-    display: block;
     border: .3rem solid #621E50;
     border-radius: 1rem;
     margin: 0.5rem;
@@ -7,9 +6,8 @@
     font-weight: bold;
     padding: .5rem .5rem;
     transition: all 0.1s ease;
-    max-width: 10em;
-    min-width: 4em;
-    text-align: center;
+    /* max-width: 10em;
+    min-width: 4em; */
     color: #621E50;
     background: #F9E1E4;
     cursor: pointer;
